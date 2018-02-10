@@ -1,1 +1,3 @@
-./obj_files/umber_shell.o: src_files/umber_shell.c inc_files/umber_shell.h
+./obj_files/umber_shell.o: src_files/umber_shell.c inc_files/umber_shell.h \
+ inc_files/print_commands.h
+./obj_files/print_commands.o: src_files/print_commands.c inc_files/print_commands.h

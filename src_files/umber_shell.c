@@ -10,6 +10,7 @@
 #include <fcntl.h>
 
 #include "umber_shell.h"
+#include "print_commands.h"
 
 pid_t shell_pgid;
 struct termios shell_tmodes;
@@ -61,26 +62,32 @@ void initialize_shell()
 
 void prompt_shell(){
 	// We print the prompt in the form "<user>@<host> <cwd> >"
-	char hostn[1204] = "";
-	gethostname(hostn, sizeof(hostn));
-	printf("%s@%s %s > ", getenv("LOGNAME"), hostn, getcwd(currentDirectory, 1024));
+
+	//char hostn[1204] = "";
+	//gethostname(hostn, sizeof(hostn));
+	//printf("%s@%s %s > ", getenv("LOGNAME"), hostn, getcwd(currentDirectory, 1024));
+	printf("%s#%s ? ", getenv("LOGNAME"), getcwd(currentDirectory, 1024));
 }
+
+/* moved to print_commands.c 
 
 void print_line(char* lines[], int n){
 	
 	int i;
 	for(i=1; i<n; i++){
-		printf("%s ", lines[i]);
+		//printf("%s ", lines[i]);
+		write(STDIN_FILENO, lines[i], strlen(lines[i]));
+		write(STDIN_FILENO, " ", 1);
 	}
-	printf("\n");
+	write(STDIN_FILENO, "\n", 1);
 }
+*/
 
 void handle_command(char* command[], int size){
 
 	if(strcmp(command[0], "print") == 0){
 		print_line(command, size);
 	}
-
 
 
 
@@ -127,12 +134,13 @@ int main(int argc, char *argv[], char ** envp){
 		fgets(line, 20, stdin);
 
 
-		if(strcmp(line, "bye") == 0){
-			return 0;
-		}
-
 		// If nothing is written, the loop is executed again
 		if((tokens[0] = strtok(line," \n\t")) == NULL) continue;
+
+		if(strcmp(tokens[0],"bye") == 0){
+			puts("exiting...");
+			return 0;
+		}
 		
 		// We read all the tokens of the input and pass it to our
 		// commandHandler as the argument
@@ -143,7 +151,7 @@ int main(int argc, char *argv[], char ** envp){
 
 		handle_command(tokens, numTokens - 1);
 		
-		return 0;
+		
 
 	}
 	return 0;

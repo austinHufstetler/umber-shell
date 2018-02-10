@@ -59,6 +59,34 @@ void initialize_shell()
     }
 }
 
+void prompt_shell(){
+	// We print the prompt in the form "<user>@<host> <cwd> >"
+	char hostn[1204] = "";
+	gethostname(hostn, sizeof(hostn));
+	printf("%s@%s %s > ", getenv("LOGNAME"), hostn, getcwd(currentDirectory, 1024));
+}
+
+void print_line(char* lines[], int n){
+	
+	int i;
+	for(i=1; i<n; i++){
+		printf("%s ", lines[i]);
+	}
+	printf("\n");
+}
+
+void handle_command(char* command[], int size){
+
+	if(strcmp(command[0], "print") == 0){
+		print_line(command, size);
+	}
+
+
+
+
+}
+
+
 void welcome(){
         printf("\n\t@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
         printf("\n");
@@ -71,6 +99,7 @@ void welcome(){
 int main(int argc, char *argv[], char ** envp){
 
 	char line[20]; // buffer for the user input
+	char * tokens[5];
 		
 	no_reprint_prmpt = 0; 	// to prevent the printing of the shell
 							// after certain methods
@@ -90,14 +119,32 @@ int main(int argc, char *argv[], char ** envp){
 	setenv("shell",getcwd(currentDirectory, 1024),1);
 
 	while(1){
-		printf("@ ");
-		scanf("%s",line);
-		if(strcmp(line, "hello") == 0){
-			puts("Hi!");
-		}
-		else if(strcmp(line,"bye")==0){
+		if (no_reprint_prmpt == 0)
+			prompt_shell();
+
+		no_reprint_prmpt = 0;
+		memset( line, '\0', 20);
+		fgets(line, 20, stdin);
+
+
+		if(strcmp(line, "bye") == 0){
 			return 0;
 		}
+
+		// If nothing is written, the loop is executed again
+		if((tokens[0] = strtok(line," \n\t")) == NULL) continue;
+		
+		// We read all the tokens of the input and pass it to our
+		// commandHandler as the argument
+		int numTokens = 1;
+		while((tokens[numTokens++] = strtok(NULL, " \n\t")) != NULL);
+
+
+
+		handle_command(tokens, numTokens - 1);
+		
+		return 0;
+
 	}
 	return 0;
 }

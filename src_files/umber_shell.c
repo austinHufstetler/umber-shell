@@ -11,6 +11,7 @@
 
 #include "umber_shell.h"
 #include "print_commands.h"
+#include "math_commands.h"
 
 pid_t shell_pgid;
 struct termios shell_tmodes;
@@ -87,6 +88,9 @@ void handle_command(char* command[], int size){
 
 	if(strcmp(command[0], "print") == 0){
 		print_line(command, size);
+	}
+	else if(strcmp(command[0], "add") == 0){
+		printf("%d\n",add(atoi(command[1]), atoi(command[2])));
 	}
 
 

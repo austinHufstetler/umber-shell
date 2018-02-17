@@ -4,7 +4,7 @@ OBJ_DIR = ./obj_files
 BIN_DIR = ./bin_files
 
 CC = gcc
-_OBJS = umber_shell.o print_commands.o
+_OBJS = umber_shell.o print_commands.o math_commands.o
 OBJS = $(patsubst %, $(OBJ_DIR)/%, $(_OBJS))
 _SRCS = $(patsubst %.o, %.c, $(_OBJS))
 SRCS = $(patsubst %, $(SRC_DIR)/%, $(_SRCS))

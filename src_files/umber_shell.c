@@ -12,6 +12,7 @@
 #include "umber_shell.h"
 #include "print_commands.h"
 #include "math_commands.h"
+#include "file_commands.h"
 
 pid_t shell_pgid;
 struct termios shell_tmodes;
@@ -67,7 +68,7 @@ void prompt_shell(){
 	//char hostn[1204] = "";
 	//gethostname(hostn, sizeof(hostn));
 	//printf("%s@%s %s > ", getenv("LOGNAME"), hostn, getcwd(currentDirectory, 1024));
-	printf("%s#%s ? ", getenv("LOGNAME"), getcwd(currentDirectory, 1024));
+	printf("%s -> %s -> ", getenv("LOGNAME"), getcwd(currentDirectory, 1024));
 }
 
 /* moved to print_commands.c 
@@ -92,7 +93,9 @@ void handle_command(char* command[], int size){
 	else if(strcmp(command[0], "add") == 0){
 		printf("%d\n",add(atoi(command[1]), atoi(command[2])));
 	}
-
+	else if(strcmp(command[0], "file") == 0){
+		handle_file_command(command, size);
+	}
 
 
 }
@@ -109,8 +112,8 @@ void welcome(){
 
 int main(int argc, char *argv[], char ** envp){
 
-	char line[20]; // buffer for the user input
-	char * tokens[5];
+	char line[50]; // buffer for the user input
+	char* tokens[5];
 		
 	no_reprint_prmpt = 0; 	// to prevent the printing of the shell
 							// after certain methods
@@ -135,7 +138,7 @@ int main(int argc, char *argv[], char ** envp){
 
 		no_reprint_prmpt = 0;
 		memset( line, '\0', 20);
-		fgets(line, 20, stdin);
+		fgets(line, 50, stdin);
 
 
 		// If nothing is written, the loop is executed again

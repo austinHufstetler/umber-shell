@@ -9,6 +9,7 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 
+#include "math_commands.h"
 
 int add(int a, int b){
 

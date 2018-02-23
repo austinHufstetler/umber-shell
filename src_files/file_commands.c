@@ -9,6 +9,7 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 
+#include "file_commands.h"
 
 void handle_file_command(char* lines[], int n){
 	

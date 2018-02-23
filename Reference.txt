@@ -1,0 +1,6 @@
+
+File and Directory Permissions (GNU C library)
+
+User: S_IRUSR (read), S_IWUSR (write), S_IXUSR (execute)
+Group: S_IRGRP (read), S_IWGRP (write), S_IXGRP (execute)
+Others: S_IROTH (read), S_IWOTH (write), S_IXOTH (execute)

@@ -25,9 +25,9 @@ print this foo fee fii         - prints whatever comes after this statement
 
 ### Math
 
-math subtract a b       - evaluates a + b and prints result
+math subtract a b       - evaluates a - b and prints result
 
-math add a b             - evaluates a - b and prints result
+math add a b             - evaluates a + b and prints result
 
 ### File
 file new foo.fee public   - creates a new file named foo.fee in current folder and gives read, write, execute rights to every user

@@ -15,6 +15,26 @@ http://www.gnu.org/software/libc/manual/html_node/Implementing-a-Shell.html#Impl
 This repository was used during initial setup
 https://github.com/jmreyes/simple-c-shell
 
+##Commands
+
+###Process
+process get id            - prints pid of shell
+
+###Print
+print foo fee fii         - prints whatever comes after print statement
+
+###Math
+
+###File
+file new foo.fee public   - creates a new file named foo.fee in current folder and gives read, write, execute rights to every user
+file new foo.fee private  - creates a new file named foo.fee in current folder and gives read, write rights to current user only
+
+###Directory
+directory new foo public  - creates a new directory named foo in current folder and gives read, write, execute rights to every user
+directory new foo private - creates a new directory named foo in current folder and gives read, write rights to current user only
+
+
+
 ### Notes
 Work in progress, not ready to use
 

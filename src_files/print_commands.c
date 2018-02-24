@@ -11,10 +11,18 @@
 
 #include "print_commands.h"
 
+void handle_print_command(char* lines[], int n){
+	
+	if(strcmp(lines[1], "this") == 0){
+		print_line(lines, n);
+	}
+	
+}
+
 void print_line(char* lines[], int n){
 	
 	int i;
-	for(i=1; i<n; i++){
+	for(i=2; i<n; i++){
 		//printf("%s ", lines[i]);
 		write(STDIN_FILENO, lines[i], strlen(lines[i]));
 		write(STDIN_FILENO, " ", 1);

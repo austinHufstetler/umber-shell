@@ -90,10 +90,10 @@ void print_line(char* lines[], int n){
 void handle_command(char* command[], int size){
 
 	if(strcmp(command[0], "print") == 0){
-		print_line(command, size);
+		handle_print_command(command, size);
 	}
-	else if(strcmp(command[0], "add") == 0){
-		printf("%d\n",add(atoi(command[1]), atoi(command[2])));
+	else if(strcmp(command[0], "math") == 0){
+		handle_math_command(command, size);
 	}
 	else if(strcmp(command[0], "file") == 0){
 		handle_file_command(command, size);

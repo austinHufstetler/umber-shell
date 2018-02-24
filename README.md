@@ -27,10 +27,12 @@ print foo fee fii         - prints whatever comes after print statement
 
 ### File
 file new foo.fee public   - creates a new file named foo.fee in current folder and gives read, write, execute rights to every user
+
 file new foo.fee private  - creates a new file named foo.fee in current folder and gives read, write rights to current user only
 
 ### Directory
 directory new foo public  - creates a new directory named foo in current folder and gives read, write, execute rights to every user
+
 directory new foo private - creates a new directory named foo in current folder and gives read, write rights to current user only
 
 

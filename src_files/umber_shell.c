@@ -14,6 +14,7 @@
 #include "math_commands.h"
 #include "file_commands.h"
 #include "directory_commands.h"
+#include "process_commands.h"
 
 pid_t shell_pgid;
 struct termios shell_tmodes;
@@ -99,6 +100,9 @@ void handle_command(char* command[], int size){
 	}
 	else if(strcmp(command[0], "directory") == 0){
 		handle_directory_command(command, size);
+	}
+	else if(strcmp(command[0], "process") == 0){
+		handle_process_command(command, size);
 	}
 
 

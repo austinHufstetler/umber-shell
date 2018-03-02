@@ -17,10 +17,11 @@ void handle_print_command(char* lines[], int n){
 		print_line(lines, n);
 	}
 	else if(strcmp(lines[1], "file") == 0){
-		print_text_file(lines[2]);
+		print_text_file(lines[2], atoi(lines[3]));
 	}
 	
 }
+
 
 void print_line(char* lines[], int n){
 	
@@ -33,19 +34,22 @@ void print_line(char* lines[], int n){
 	write(STDIN_FILENO, "\n", 1);
 }
 
-void print_text_file(char* path){
-	FILE *ptr;
-	char filename[30], f;
+//geeksforgeeks input output system calls c create open close read write
+void print_text_file(char* path, int num_chars){
+	int fd = open(path, O_RDONLY);
+	int size;
+	char* c = (char*)calloc(num_chars, sizeof(char));
 
-	ptr = fopen(path, "r");
-	if(ptr == NULL){
-		printf("File does not exist\n");
+	if(fd < 0){
+		printf("Could not open file\n");
 	}
 	else{
-		while(f != EOF){
-			write(STDIN_FILENO, &f, 1);
-			f = fgetc(ptr);
-		}
+		size = read(fd, c, num_chars);
+		write(STDIN_FILENO, c, size);
 	}
+	printf("\n");
+	
+	free(c);
+	close(fd);
 
 }

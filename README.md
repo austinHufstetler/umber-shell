@@ -23,7 +23,8 @@ process get id            - prints pid of shell
 ### Print
 print this foo fee fii         - prints whatever comes after this statement
 
-print file foo.txt -prints text file on shell
+print file foo.txt x -prints text file on shell with only x number of characters printed
+
 
 ### Math
 

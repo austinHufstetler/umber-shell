@@ -23,6 +23,8 @@ process get id            - prints pid of shell
 ### Print
 print this foo fee fii         - prints whatever comes after this statement
 
+print file foo.txt -prints text file on shell
+
 ### Math
 
 math subtract a b       - evaluates a - b and prints result

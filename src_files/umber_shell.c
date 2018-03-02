@@ -70,7 +70,7 @@ void prompt_shell(){
 	//char hostn[1204] = "";
 	//gethostname(hostn, sizeof(hostn));
 	//printf("%s@%s %s > ", getenv("LOGNAME"), hostn, getcwd(currentDirectory, 1024));
-	printf("%s -> %s -> ", getenv("LOGNAME"), getcwd(currentDirectory, 1024));
+	printf("(%s) %s -> ", getenv("LOGNAME"), getcwd(currentDirectory, 1024));
 }
 
 /* moved to print_commands.c 

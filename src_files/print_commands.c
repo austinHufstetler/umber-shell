@@ -10,6 +10,7 @@
 #include <fcntl.h>
 
 #include "print_commands.h"
+#include "umber_utils.h"
 
 void handle_print_command(char* lines[], int n){
 	
@@ -17,7 +18,12 @@ void handle_print_command(char* lines[], int n){
 		print_line(lines, n);
 	}
 	else if(strcmp(lines[1], "file") == 0){
-		print_text_file(lines[2], atoi(lines[3]));
+		if(n == 3){
+			print_text_file(lines[2]);
+		}
+		else if(n == 4){
+			print_text_file_limit_chars(lines[2], atoi(lines[3]));
+		}
 	}
 	
 }
@@ -35,9 +41,29 @@ void print_line(char* lines[], int n){
 }
 
 //geeksforgeeks input output system calls c create open close read write
-void print_text_file(char* path, int num_chars){
+void print_text_file_limit_chars(char* path, int num_chars){
 	int fd = open(path, O_RDONLY);
 	int size;
+	char* c = (char*)calloc(num_chars, sizeof(char));
+
+	if(fd < 0){
+		printf("Could not open file\n");
+	}
+	else{
+		size = read(fd, c, num_chars);
+		write(STDIN_FILENO, c, size);
+	}
+	printf("\n");
+	
+	free(c);
+	close(fd);
+
+}
+
+void print_text_file(char* path){
+	int fd = open(path, O_RDONLY);
+	int size;
+	size_t num_chars = get_file_size(path);
 	char* c = (char*)calloc(num_chars, sizeof(char));
 
 	if(fd < 0){

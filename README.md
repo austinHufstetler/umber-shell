@@ -1,4 +1,4 @@
-![Alt text](http://www.earthpigments.com/burnt-umber-pigment "Title")
+![Alt text](http://www.earthpigments.com/burnt-umber-pigment)
 
 # umber-shell
 

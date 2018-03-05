@@ -104,8 +104,20 @@ void handle_command(char* command[], int size){
 	else if(strcmp(command[0], "process") == 0){
 		handle_process_command(command, size);
 	}
+	else if(strcmp(command[0], "help") == 0){
+		help();
+	}
 
 
+}
+
+void help(){
+     printf("\nmath      - basic math commands") ; 
+     printf("\nprint     - print files or text to screen") ; 
+     printf("\nfile      - create new files") ; 
+     printf("\ndirectory - create new and change directories") ; 
+     printf("\nprocess   - get process id") ; 
+     printf("\n\n");
 }
 
 

@@ -5,7 +5,7 @@
 
 This is an academic project for an Operating Systems course.
 
-##Goals
+## Goals
 Most shells focus on shorter commands rather than self-explanatory ones. The names of commands like 'mkdir', 'ls', and 'touch' give no indication as to what the commands actually do. One of our goals is to create a shell with easy-to-understand commands.
 
 However, the biggest goal doesn't lie in the shell itself, but the code used to write it. Our main objective is to write code that is easy to read, easy to follow, and that gives the reader a detailed understanding of what is going on behind the scenes.

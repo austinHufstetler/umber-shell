@@ -54,6 +54,6 @@ directory change path - changes directory to path name
 
 
 ### Notes
-Work in progress, not ready to use
+Work in progress
 
 

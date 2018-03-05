@@ -1,3 +1,5 @@
+![Alt text](http://www.earthpigments.com/burnt-umber-pigment "Title")
+
 # umber-shell
 
 This is an academic project for an Operating Systems course.

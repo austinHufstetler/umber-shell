@@ -17,6 +17,11 @@ https://github.com/jmreyes/simple-c-shell
 
 ## Commands
 
+###main
+help - prints list of subcategories and their descriptions (math, print, process, etc)
+
+bye - exits shell
+
 ### Process
 process get id            - prints pid of shell
 
@@ -43,6 +48,8 @@ file new foo.fee private  - creates a new file named foo.fee in current folder a
 directory new foo public  - creates a new directory named foo in current folder and gives read, write, execute rights to every user
 
 directory new foo private - creates a new directory named foo in current folder and gives read, write rights to current user only
+
+directory change path - changes directory to path name
 
 
 

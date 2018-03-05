@@ -1,6 +1,8 @@
-<center>
+
 <img src="https://lh3.googleusercontent.com/klFxCjTRWH-sM805LjvYJw8jDTDGtIFukHrG4vLjf7QQsfPe1Pm6VRALcituCXFqRUAJHC0mKyCi0rM6Pers=w1920-h935-rw" width="300">
-</center>
+
+
+<img src="https://lh3.googleusercontent.com/Ttxh22Q3TbGkmo_8frVT9xfAtvi65BdSsIVHaIT3gl8UA6Zb5F9XGSB5hgGraz2wSCIHjBGKNmgdmcup6j9R=w1920-h935-rw" width="300">
 
 # umber-shell
 
@@ -64,4 +66,5 @@ Work in progress
 logo credit: 
 Check out the new logo that I created on <a href="http://logomakr.com" title="Logo Makr">LogoMakr.com</a> https://logomakr.com/5dNSbP
 
+Check out the new logo that I created on <a href="http://logomakr.com" title="Logo Makr">LogoMakr.com</a> https://logomakr.com/0aieOc
 

@@ -1,4 +1,4 @@
-![Alt text](https://drive.google.com/file/d/16rKjSsEJ-xwPoZ0vU_JoPpDjySPPBhIj/view?usp=sharing2)
+![Alt text](https://drive.google.com/file/d/16rKjSsEJ-xwPoZ0vU_JoPpDjySPPBhIj/view)
 
 # umber-shell
 

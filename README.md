@@ -17,7 +17,7 @@ https://github.com/jmreyes/simple-c-shell
 
 ## Commands
 
-###main
+### main
 help - prints list of subcategories and their descriptions (math, print, process, etc)
 
 bye - exits shell

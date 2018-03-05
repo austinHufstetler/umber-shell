@@ -25,6 +25,8 @@ print this foo fee fii         - prints whatever comes after this statement
 
 print file foo.txt x -prints text file on shell with only x number of characters printed
 
+print file foo.txt - prints entire text file
+
 
 ### Math
 

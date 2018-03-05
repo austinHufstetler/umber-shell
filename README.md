@@ -1,6 +1,4 @@
-![Alt text](https://lh3.googleusercontent.com/klFxCjTRWH-sM805LjvYJw8jDTDGtIFukHrG4vLjf7QQsfPe1Pm6VRALcituCXFqRUAJHC0mKyCi0rM6Pers=w1920-h935-rw)
-
-<img src="https://lh3.googleusercontent.com/klFxCjTRWH-sM805LjvYJw8jDTDGtIFukHrG4vLjf7QQsfPe1Pm6VRALcituCXFqRUAJHC0mKyCi0rM6Pers=w1920-h935-rw" width="48">
+<img src="https://lh3.googleusercontent.com/klFxCjTRWH-sM805LjvYJw8jDTDGtIFukHrG4vLjf7QQsfPe1Pm6VRALcituCXFqRUAJHC0mKyCi0rM6Pers=w1920-h935-rw" width="150">
 
 # umber-shell
 

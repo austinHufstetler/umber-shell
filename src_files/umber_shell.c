@@ -164,8 +164,7 @@ int main(int argc, char *argv[], char ** envp){
 		// If nothing is written, the loop is executed again
 		if((tokens[0] = strtok(line," \n\t")) == NULL) continue;
 
-		if(strcmp(tokens[0],"bye") == 0){
-			puts("exiting...");
+		if(strcmp(tokens[0],"exit") == 0){
 			return 0;
 		}
 		

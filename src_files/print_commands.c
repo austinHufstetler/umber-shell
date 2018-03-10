@@ -8,6 +8,7 @@
 #include <signal.h>
 #include <sys/wait.h>
 #include <fcntl.h>
+#include <dirent.h>
 
 #include "print_commands.h"
 #include "umber_utils.h"
@@ -24,6 +25,9 @@ void handle_print_command(char* lines[], int n){
 		else if(n == 4){
 			print_text_file_limit_chars(lines[2], atoi(lines[3]));
 		}
+	}
+	else if(strcmp(lines[1], "directory") == 0){
+		print_current_directory();
 	}
 	
 }
@@ -77,5 +81,25 @@ void print_text_file(char* path){
 	
 	free(c);
 	close(fd);
+
+}
+
+void print_current_directory(){
+	DIR *dir;
+	dir = opendir(".");
+	struct dirent *sd;
+	if(dir == NULL){
+		printf("\nUnable to open\n");
+	}
+	else{
+		printf("\n%-20s%-5s\n\n", "Name", "Size");
+		while((sd=readdir(dir))!=NULL){
+			printf("%-20s %-5hu \n", sd->d_name, sd->d_reclen);
+		}
+		printf("\n");
+		closedir(dir);
+
+	}
+
 
 }

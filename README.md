@@ -46,6 +46,8 @@ print file foo.txt x -prints text file on shell with only x number of characters
 
 print file foo.txt - prints entire text file
 
+print directory - prints all files and folders in current directory
+
 
 ### Math
 

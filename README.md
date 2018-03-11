@@ -60,6 +60,10 @@ file new foo.fee public   - creates a new file named foo.fee in current folder a
 
 file new foo.fee private  - creates a new file named foo.fee in current folder and gives read, write rights to current user only
 
+file rename current_name new_name - renames a file
+
+file move file_name directory_name - moves a file from current directory to new directory (example. "file move test.txt test/")
+
 ### Directory
 directory new foo public  - creates a new directory named foo in current folder and gives read, write, execute rights to every user
 

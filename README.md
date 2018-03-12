@@ -64,12 +64,16 @@ file rename current_name new_name - renames a file
 
 file move file_name directory_name - moves a file from current directory to new directory (example. "file move test.txt test/")
 
+file delete file_name - deletes file called file_name that is in current directory
+
 ### Directory
 directory new foo public  - creates a new directory named foo in current folder and gives read, write, execute rights to every user
 
 directory new foo private - creates a new directory named foo in current folder and gives read, write rights to current user only
 
 directory change path - changes directory to path name
+
+directory delete empty directory_name - deletes empty(important) directory called directory_name
 
 
 

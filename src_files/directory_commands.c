@@ -8,6 +8,7 @@
 #include <signal.h>
 #include <sys/wait.h>
 #include <fcntl.h>
+#include <errno.h>
 
 
 //for mkdir
@@ -28,6 +29,11 @@ void handle_directory_command(char* lines[], int n){
 	else if(strcmp(lines[1], "change") == 0){
 		change_directory(lines[2]);
 	}
+	else if(strcmp(lines[1], "delete") == 0){
+		if(strcmp(lines[2], "empty") == 0){
+			delete_empty_directory(lines[3]);
+		}
+	}
 	
 }
 
@@ -44,4 +50,22 @@ void create_new_directory(char* name, char* permission){
 
 void change_directory(char* directory){
 	chdir(directory);
+}
+
+void delete_empty_directory(char* directory_name){
+
+	int check = rmdir(directory_name);
+	if(check == 0){
+		printf("Successfully deleted directory %s\n", directory_name);
+	}
+	else if(errno == 2){
+		printf("Error Code (errno) 2: Directory %s does not exist\n", directory_name);
+	}
+	else if(errno == 39){
+		printf("Error Code (errno) 39: Directory %s is not empty\n", directory_name);
+	}
+	else{
+		printf("\nError Code (errno) %d: There was an error with deleting your directory\n",errno);
+	}
+
 }

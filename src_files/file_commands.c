@@ -17,11 +17,14 @@ void handle_file_command(char* lines[], int n){
 	if(strcmp(lines[1], "new") == 0){
 		create_new_file(lines[2], lines[3]);
 	}
-	if(strcmp(lines[1], "rename") == 0){
+	else if(strcmp(lines[1], "rename") == 0){
 		rename_file(lines[2], lines[3]);
 	}
-	if(strcmp(lines[1], "move") == 0){
+	else if(strcmp(lines[1], "move") == 0){
 		move_file(lines[2], lines[3]);
+	}
+	else if(strcmp(lines[1], "delete") == 0){
+		delete_file(lines[2]);
 	}
 	
 }
@@ -49,7 +52,7 @@ void rename_file(char* current_name, char* new_name){
 		printf("Error Code (errno) 2: File %s does not exist\n", current_name);
 	}
 	else{
-		printf("\nThere was an error with renaming your file\n");
+		printf("\nError Code (errno) %d: There was an error with renaming your file\n", errno);
 	}
 }
 
@@ -66,6 +69,22 @@ void move_file(char* file_name, char* destination){
 		printf("Error Code (errno) 2: File %s or directory %s does not exist\n", file_name, destination);
 	}
 	else{
-		printf("\nThere was an error with moving your file\n");
+		printf("\nError Code (errno) %d: There was an error with moving your file\n", errno);
 	}
+}
+
+void delete_file(char* file_name){
+
+	int check = unlink(file_name);
+	if(check == 0){
+		printf("Successfully deleted file %s\n", file_name);
+	}
+	else if(errno == 2){
+		printf("Error Code (errno) 2: File %s does not exist\n", file_name);
+	}
+	else{
+		printf("\nError Code (errno) %d: There was an error with deleting your file\n", errno);
+	}
+
+
 }

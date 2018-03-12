@@ -44,9 +44,9 @@ print this foo fee fii         - prints whatever comes after this statement
 
 print file foo.txt x -prints text file on shell with only x number of characters printed
 
-*print file foo.txt - prints entire text file
+* print file foo.txt - prints entire text file
 
-*print directory - prints all files and folders in current directory
+* print directory - prints all files and folders in current directory
 
 
 ### Math

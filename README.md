@@ -32,17 +32,17 @@ https://github.com/jmreyes/simple-c-shell
 ## Commands
 
 ### Main (without typing subcategory below)
-help - prints list of subcategories and their descriptions (math, print, process, etc)
+* help - prints list of subcategories and their descriptions (math, print, process, etc)
 
-bye - exits shell
+* bye - exits shell
 
 ### Process
-process get id            - prints pid of shell
+* process get id            - prints pid of shell
 
 ### Print
-print this foo fee fii         - prints whatever comes after this statement
+* print this foo fee fii         - prints whatever comes after this statement
 
-print file foo.txt x -prints text file on shell with only x number of characters printed
+* print file foo.txt x -prints text file on shell with only x number of characters printed
 
 * print file foo.txt - prints entire text file
 
@@ -51,29 +51,29 @@ print file foo.txt x -prints text file on shell with only x number of characters
 
 ### Math
 
-math subtract a b       - evaluates a - b and prints result
+* math subtract a b       - evaluates a - b and prints result
 
-math add a b             - evaluates a + b and prints result
+* math add a b             - evaluates a + b and prints result
 
 ### File
-file new foo.fee public   - creates a new file named foo.fee in current folder and gives read, write, execute rights to every user
+* file new foo.fee public   - creates a new file named foo.fee in current folder and gives read, write, execute rights to every user
 
-file new foo.fee private  - creates a new file named foo.fee in current folder and gives read, write rights to current user only
+* file new foo.fee private  - creates a new file named foo.fee in current folder and gives read, write rights to current user only
 
-file rename current_name new_name - renames a file
+* file rename current_name new_name - renames a file
 
-file move file_name directory_name - moves a file from current directory to new directory (example. "file move test.txt test/")
+* file move file_name directory_name - moves a file from current directory to new directory (example. "file move test.txt test/")
 
-file delete file_name - deletes file called file_name that is in current directory
+* file delete file_name - deletes file called file_name that is in current directory
 
 ### Directory
-directory new foo public  - creates a new directory named foo in current folder and gives read, write, execute rights to every user
+* directory new foo public  - creates a new directory named foo in current folder and gives read, write, execute rights to every user
 
-directory new foo private - creates a new directory named foo in current folder and gives read, write rights to current user only
+* directory new foo private - creates a new directory named foo in current folder and gives read, write rights to current user only
 
-directory change path - changes directory to path name
+* directory change path - changes directory to path name
 
-directory delete empty directory_name - deletes empty(important) directory called directory_name
+* <strong>directory delete empty directory_name</strong> - deletes empty(important) directory called directory_name
 
 
 

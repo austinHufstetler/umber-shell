@@ -39,6 +39,8 @@ https://github.com/jmreyes/simple-c-shell
 ### Process
 * <strong>process get id  </strong>          - prints pid of shell
 
+* <strong>process replace path args  </strong>          - replaces shell with new process
+
 ### Print
 * <strong>print this foo fee fii</strong>         - prints whatever comes after this statement
 

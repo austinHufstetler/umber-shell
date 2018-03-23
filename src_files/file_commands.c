@@ -26,6 +26,9 @@ void handle_file_command(char* lines[], int n){
 	else if(strcmp(lines[1], "delete") == 0){
 		delete_file(lines[2]);
 	}
+	else if(strcmp(lines[1], "copy") == 0){
+		copy_file(lines[2], lines[3]);
+	}
 	
 }
 
@@ -88,3 +91,32 @@ void delete_file(char* file_name){
 
 
 }
+
+void copy_file(char* file_name, char* location){
+
+	if(strcmp(file_name, location) == 0){
+		printf("Error, this will overwrite your file \n");
+		return;
+	}
+
+	FILE* source;
+	FILE* destination;
+	int c;
+
+	if((source = fopen(file_name, "r")) && (destination = fopen(location, "w"))){
+		while((c = getc(source)) != EOF){
+			putc(c, destination);
+		}
+		fclose(source);
+		fclose(destination);
+		printf("Successfully copied file %s to %s\n", file_name, location);
+	}
+	else{
+		printf("There was an error copying file %s\n", file_name);
+	}
+
+
+
+}
+
+

@@ -1,6 +1,0 @@
-hello
-bye
-hello
-no
-bye
-yes

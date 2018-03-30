@@ -38,6 +38,11 @@ void create_new_file(char* name, char* permission){
 		printf("File %s has been created with Read-Write permissions to you only\n",name);
 		close(file);
 	}
+	else if(strcmp(permission, "public") == 0){
+		int file = open(name, O_CREAT, S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IWGRP | S_IXGRP | S_IROTH | S_IWOTH | S_IXOTH);
+		printf("File %s has been created with Read-Write permissions to everyone\n",name);
+		close(file);
+	}
 	else if(strcmp(permission, "none") == 0){
 		int file = open(name, O_CREAT);
 		printf("File %s has been created with no permissions\n",name);

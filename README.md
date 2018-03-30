@@ -1,5 +1,5 @@
 
-<img src="https://lh3.googleusercontent.com/Ttxh22Q3TbGkmo_8frVT9xfAtvi65BdSsIVHaIT3gl8UA6Zb5F9XGSB5hgGraz2wSCIHjBGKNmgdmcup6j9R=w1920-h935-rw" width="450">
+![GitHub Logo](logo.png)
 
 # umber-shell
 
@@ -32,40 +32,50 @@ https://github.com/jmreyes/simple-c-shell
 ## Commands
 
 ### Main (without typing subcategory below)
-help - prints list of subcategories and their descriptions (math, print, process, etc)
+* <strong>help</strong> - prints list of subcategories and their descriptions (math, print, process, etc)
 
-bye - exits shell
+* <strong>exit</strong> - exits shell
 
 ### Process
-process get id            - prints pid of shell
+* <strong>process get id  </strong>          - prints pid of shell
+
+* <strong>process replace path args  </strong>          - replaces shell with new process
 
 ### Print
-print this foo fee fii         - prints whatever comes after this statement
+* <strong>print this foo fee fii</strong>         - prints whatever comes after this statement
 
-print file foo.txt x -prints text file on shell with only x number of characters printed
+* <strong>print file foo.txt x</strong> -prints text file on shell with only x number of characters printed
 
-print file foo.txt - prints entire text file
+* <strong>print file foo.txt</strong> - prints entire text file
 
-print directory - prints all files and folders in current directory
+* <strong>print directory</strong> - prints all files and folders in current directory
 
 
 ### Math
 
-math subtract a b       - evaluates a - b and prints result
+* <strong>math subtract a b</strong>       - evaluates a - b and prints result
 
-math add a b             - evaluates a + b and prints result
+* <strong>math add a b</strong>             - evaluates a + b and prints result
 
 ### File
-file new foo.fee public   - creates a new file named foo.fee in current folder and gives read, write, execute rights to every user
+* <strong>file new foo.fee public</strong>   - creates a new file named foo.fee in current folder and gives read, write, execute rights to every user
 
-file new foo.fee private  - creates a new file named foo.fee in current folder and gives read, write rights to current user only
+* <strong>file new foo.fee private</strong>  - creates a new file named foo.fee in current folder and gives read, write rights to current user only
+
+* <strong>file rename current_name new_name</strong> - renames a file
+
+* <strong>file move file_name directory_name</strong> - moves a file from current directory to new directory (example. "file move test.txt test/")
+
+* <strong>file delete file_name</strong> - deletes file called file_name that is in current directory
 
 ### Directory
-directory new foo public  - creates a new directory named foo in current folder and gives read, write, execute rights to every user
+* <strong>directory new foo public</strong>  - creates a new directory named foo in current folder and gives read, write, execute rights to every user
 
-directory new foo private - creates a new directory named foo in current folder and gives read, write rights to current user only
+* <strong>directory new foo private</strong> - creates a new directory named foo in current folder and gives read, write rights to current user only
 
-directory change path - changes directory to path name
+* <strong>directory change path</strong> - changes directory to path name
+
+* <strong>directory delete empty directory_name</strong> - deletes empty(important) directory called directory_name
 
 
 

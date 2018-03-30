@@ -57,10 +57,14 @@ https://github.com/jmreyes/simple-c-shell
 
 * <strong>math add a b</strong>             - evaluates a + b and prints result
 
+* <strong>math multiply a b</strong>             - evaluates a * b and prints result
+
 ### File
 * <strong>file new foo.fee public</strong>   - creates a new file named foo.fee in current folder and gives read, write, execute rights to every user
 
 * <strong>file new foo.fee private</strong>  - creates a new file named foo.fee in current folder and gives read, write rights to current user only
+
+* <strong>file new foo.fee none</strong>  - creates a new file named foo.fee in current folder and gives read, write rights to no one :) (not very useful, but interesting to see how to do it)
 
 * <strong>file rename current_name new_name</strong> - renames a file
 

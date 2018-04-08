@@ -9,6 +9,8 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <strings.h>
+
 
 #include "file_commands.h"
 
@@ -104,6 +106,9 @@ void copy_file(char* file_name, char* location){
 		return;
 	}
 
+	int* buffer[1];
+
+	/*
 	FILE* source;
 	FILE* destination;
 	int c;
@@ -118,7 +123,31 @@ void copy_file(char* file_name, char* location){
 	}
 	else{
 		printf("There was an error copying file %s\n", file_name);
+	} */
+
+	int source ;
+	int destination;
+
+	if(((source = open(file_name, O_RDONLY)) == -1) || ((destination = open(location, O_CREAT | O_WRONLY, 0666)) == -1)){
+		printf("Error, there was an error copying your file \n");
 	}
+	else{
+
+
+
+	    while ((read(source, buffer, 1)) != 0)
+	    {
+	        write(destination, buffer, 1);
+	        bzero(buffer, 1);
+	    }
+
+	    close(source);
+	    close(destination);
+	}
+
+
+
+
 
 
 

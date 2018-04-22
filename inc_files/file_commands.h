@@ -4,4 +4,5 @@ void rename_file(char*, char*);
 void move_file(char*, char*);
 void delete_file(char*);
 void copy_file(char*,char*);
+void write_to_file(char*, int, char* []);
 void file_help();

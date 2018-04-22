@@ -15,19 +15,30 @@
 
 void handle_print_command(char* lines[], int n){
 	
-	if(strcmp(lines[1], "this") == 0){
-		print_line(lines, n);
-	}
-	else if(strcmp(lines[1], "file") == 0){
-		if(n == 3){
-			print_text_file(lines[2]);
+	if( n >= 2){
+		if(strcmp(lines[1], "this") == 0){
+			print_line(lines, n);
 		}
-		else if(n == 4){
-			print_text_file_limit_chars(lines[2], atoi(lines[3]));
+		else if(strcmp(lines[1], "file") == 0){
+			if(n == 3){
+				print_text_file(lines[2]);
+			}
+			else if(n == 4){
+				print_text_file_limit_chars(lines[2], atoi(lines[3]));
+			}
+		}
+		else if(strcmp(lines[1], "directory") == 0){
+			print_current_directory();
+		}
+		else if(strcmp(lines[1], "help") == 0){
+			print_help();
+		}
+		else{
+	      printf("\nCommand does not exist \n\n");
 		}
 	}
-	else if(strcmp(lines[1], "directory") == 0){
-		print_current_directory();
+	else{
+		printf("\nYou only entered a category, please enter a command \n\n");
 	}
 	
 }
@@ -102,4 +113,8 @@ void print_current_directory(){
 	}
 
 
+}
+
+void print_help(){
+     printf("\n\n");
 }

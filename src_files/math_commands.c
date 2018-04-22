@@ -13,20 +13,57 @@
 
 void handle_math_command(char* lines[], int n){
 	
-	if(strcmp(lines[1], "add") == 0){
-		printf("%d\n",add(atoi(lines[2]), atoi(lines[3])));
-	}
-	else if(strcmp(lines[1], "subtract") == 0){
-		printf("%d\n",subtract(atoi(lines[2]), atoi(lines[3])));
-	}
-  else if(strcmp(lines[1], "multiply") == 0){
-      printf("%d\n",multiply(atoi(lines[2]), atoi(lines[3])));
+   if(n >= 2){
+   	if(strcmp(lines[1], "add") == 0){
+         if(n == 4){
+   		 printf("%d\n",add(atoi(lines[2]), atoi(lines[3])));
+         }
+         else{
+            printf("\nWrong number of arguments \n\n");
+         }
+   	}
+   	else if(strcmp(lines[1], "subtract") == 0){
+         if(n == 4){
+            printf("%d\n",subtract(atoi(lines[2]), atoi(lines[3])));
+         }
+         else{
+            printf("\nWrong number of arguments \n\n");
+         }
+   	}
+     else if(strcmp(lines[1], "multiply") == 0){
+         if(n == 4){
+            printf("%d\n",multiply(atoi(lines[2]), atoi(lines[3])));
+         }
+         else{
+            printf("\nWrong number of arguments \n\n");
+         }
+
+      }
+     else if(strcmp(lines[1], "divide") == 0){
+         if(n == 4){
+            printf("%d\n",divide(atoi(lines[2]), atoi(lines[3])));
+         }
+         else{
+            printf("\nWrong number of arguments \n\n");
+         }
+      }
+     else if(strcmp(lines[1], "mod") == 0){
+         if(n == 4){
+            printf("%d\n",mod(atoi(lines[2]), atoi(lines[3])));
+         }
+         else{
+            printf("\nWrong number of arguments \n\n");
+         }
+      }
+      else if(strcmp(lines[1], "help") == 0){
+         math_help();
+      }
+      else{
+         printf("\nCommand does not exist \n\n");
+      }
    }
-  else if(strcmp(lines[1], "divide") == 0){
-      printf("%d\n",divide(atoi(lines[2]), atoi(lines[3])));
-   }
-  else if(strcmp(lines[1], "mod") == 0){
-      printf("%d\n",mod(atoi(lines[2]), atoi(lines[3])));
+   else{
+      printf("\nYou only entered a category, please enter a command \n\n");
    }
 	
 }
@@ -80,6 +117,7 @@ int multiply(int a, int b){
 int divide(int a, int b){
 
    int c = 0;
+   int d = 0;
 
    
    asm("movl $0x0, %%edx;"
@@ -107,4 +145,8 @@ int mod(int a, int b){
       );
 
    return d;   
+}
+
+void math_help(){
+     printf("\n\n");
 }

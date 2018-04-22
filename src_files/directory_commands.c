@@ -23,16 +23,42 @@
 
 void handle_directory_command(char* lines[], int n){
 	
-	if(strcmp(lines[1], "new") == 0){
-		create_new_directory(lines[2], lines[3]);
-	}
-	else if(strcmp(lines[1], "change") == 0){
-		change_directory(lines[2]);
-	}
-	else if(strcmp(lines[1], "delete") == 0){
-		if(strcmp(lines[2], "empty") == 0){
-			delete_empty_directory(lines[3]);
+	if(n >= 2){
+		if(strcmp(lines[1], "new") == 0){
+			if(n == 4){
+				create_new_directory(lines[2], lines[3]);
+			}
+			else{
+				printf("\nWrong number of arguments \n\n");
+			}
 		}
+		else if(strcmp(lines[1], "change") == 0){
+			if(n == 3){
+				change_directory(lines[2]);
+			}
+			else{
+				printf("\nWrong number of arguments \n\n");
+			}
+		}
+		else if(strcmp(lines[1], "delete") == 0){
+			if(n == 4){
+				if(strcmp(lines[2], "empty") == 0){
+					delete_empty_directory(lines[3]);
+				}
+			}
+			else{
+				printf("\nWrong number of arguments \n\n");
+			}
+		}
+		else if(strcmp(lines[1], "help") == 0){
+			directory_help();
+		}
+		else{
+	      printf("\nCommand does not exist \n\n");
+		}
+	}
+	else{
+		printf("\nYou only entered a category, please enter a command \n\n");
 	}
 	
 }
@@ -69,3 +95,8 @@ void delete_empty_directory(char* directory_name){
 	}
 
 }
+
+void directory_help(){
+     printf("\n\n");
+}
+

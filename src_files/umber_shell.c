@@ -89,23 +89,29 @@ void print_line(char* lines[], int n){
 
 void handle_command(char* command[], int size){
 
-	if(strcmp(command[0], "print") == 0){
-		handle_print_command(command, size);
-	}
-	else if(strcmp(command[0], "math") == 0){
-		handle_math_command(command, size);
-	}
-	else if(strcmp(command[0], "file") == 0){
-		handle_file_command(command, size);
-	}
-	else if(strcmp(command[0], "directory") == 0){
-		handle_directory_command(command, size);
-	}
-	else if(strcmp(command[0], "process") == 0){
-		handle_process_command(command, size);
-	}
-	else if(strcmp(command[0], "help") == 0){
-		help();
+	if(size >= 1) {
+
+		if(strcmp(command[0], "print") == 0){
+			handle_print_command(command, size);
+		}
+		else if(strcmp(command[0], "math") == 0){
+			handle_math_command(command, size);
+		}
+		else if(strcmp(command[0], "file") == 0){
+			handle_file_command(command, size);
+		}
+		else if(strcmp(command[0], "directory") == 0){
+			handle_directory_command(command, size);
+		}
+		else if(strcmp(command[0], "process") == 0){
+			handle_process_command(command, size);
+		}
+		else if(strcmp(command[0], "help") == 0){
+			help();
+		}
+		else{
+			printf("\nCategory does not exist, type help to see a list of categories\n\n");
+		}
 	}
 
 
@@ -122,12 +128,20 @@ void help(){
 
 
 void welcome(){
-        printf("\n\t@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
-        printf("\n");
-        printf("\t               Umber Shell                    \n");
-        printf("\n");
-        printf("\t@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
-        printf("\n\n");
+
+
+printf("\n 	#     #      \n");                       
+printf("	#     # #    # #####  ###### #####  \n"); 
+printf("	#     # ##  ## #    # #      #    # \n"); 
+printf("	#     # # ## # #####  #####  #    # \n"); 
+printf("	#     # #    # #    # #      #####  \n"); 
+printf("	#     # #    # #    # #      #   #  \n"); 
+printf(" 	 #####  #    # #####  ###### #    # \n\n"); 
+
+
+                                                      
+
+
 }
 
 int main(int argc, char *argv[], char ** envp){

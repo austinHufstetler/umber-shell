@@ -59,6 +59,11 @@ https://github.com/jmreyes/simple-c-shell
 
 * <strong>math multiply a b</strong>             - evaluates a * b and prints result
 
+* <strong>math divide a b</strong>       - evaluates a / b and prints result
+
+* <strong>math mod a b</strong>             - evaluates a % b and prints result
+
+
 ### File
 * <strong>file new foo.fee public</strong>   - creates a new file named foo.fee in current folder and gives read, write, execute rights to every user
 

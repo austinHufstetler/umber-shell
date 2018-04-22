@@ -16,20 +16,56 @@
 
 void handle_file_command(char* lines[], int n){
 	
-	if(strcmp(lines[1], "new") == 0){
-		create_new_file(lines[2], lines[3]);
+	if(n >= 2){
+		if(strcmp(lines[1], "new") == 0){
+			if(n == 4){
+				create_new_file(lines[2], lines[3]);
+			}
+	        else{
+	            printf("\nWrong number of arguments \n\n");
+	        }
+		}
+		else if(strcmp(lines[1], "rename") == 0){
+			if(n == 4){
+				rename_file(lines[2], lines[3]);
+			}
+	        else{
+	            printf("\nWrong number of arguments \n\n");
+	        }
+		}
+		else if(strcmp(lines[1], "move") == 0){
+			if(n == 4){
+				move_file(lines[2], lines[3]);
+			}
+	        else{
+	            printf("\nWrong number of arguments \n\n");
+	        }
+		}
+		else if(strcmp(lines[1], "delete") == 0){
+			if(n == 3){
+				delete_file(lines[2]);
+			}
+	        else{
+	            printf("\nWrong number of arguments \n\n");
+	        }
+		}
+		else if(strcmp(lines[1], "copy") == 0){
+			if(n == 4){
+				copy_file(lines[2], lines[3]);
+			}
+	        else{
+	            printf("\nWrong number of arguments \n\n");
+	        }
+		}
+		else if(strcmp(lines[1], "help") == 0){
+			file_help();
+		}
+		else{
+	      printf("\nCommand does not exist \n\n");
+		}
 	}
-	else if(strcmp(lines[1], "rename") == 0){
-		rename_file(lines[2], lines[3]);
-	}
-	else if(strcmp(lines[1], "move") == 0){
-		move_file(lines[2], lines[3]);
-	}
-	else if(strcmp(lines[1], "delete") == 0){
-		delete_file(lines[2]);
-	}
-	else if(strcmp(lines[1], "copy") == 0){
-		copy_file(lines[2], lines[3]);
+	else{
+		printf("\nYou only entered a category, please enter a command \n\n");
 	}
 	
 }
@@ -97,6 +133,7 @@ void delete_file(char* file_name){
 	}
 
 
+
 }
 
 void copy_file(char* file_name, char* location){
@@ -107,6 +144,8 @@ void copy_file(char* file_name, char* location){
 	}
 
 	int* buffer[1];
+
+	//without system calls
 
 	/*
 	FILE* source;
@@ -146,11 +185,11 @@ void copy_file(char* file_name, char* location){
 	}
 
 
-
-
-
-
-
 }
+
+void file_help(){
+     printf("\n\n");
+}
+
 
 

@@ -5,3 +5,4 @@ int subtract(int, int);
 int multiply(int, int);
 int divide(int, int);
 int mod(int, int);
+void math_help();

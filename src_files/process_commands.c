@@ -16,13 +16,34 @@
 
 void handle_process_command(char* lines[], int n){
 	
-	if(strcmp(lines[1], "get") == 0){
-		if(strcmp(lines[2], "id") == 0) {
-			printf("%d\n",get_process_id());
+	if(n >= 2){
+		if(strcmp(lines[1], "get") == 0){
+			if(n == 3){
+				if(strcmp(lines[2], "id") == 0) {
+					printf("%d\n",get_process_id());
+				}
+			}
+			else{
+				printf("\nWrong number of arguments \n\n");
+			}
+		}
+		else if(strcmp(lines[1], "replace") == 0){
+			if(n >= 3){
+				replace_process(lines[2], lines, n);
+			}
+			else{
+				printf("\nWrong number of arguments \n\n");
+			}
+		}
+		else if(strcmp(lines[1], "help") == 0){
+			process_help();
+		}
+		else{
+	      printf("\nCommand does not exist \n\n");
 		}
 	}
-	else if(strcmp(lines[1], "replace") == 0){
-		replace_process(lines[2], lines, n);
+	else{
+		printf("\nYou only entered a category, please enter a command \n\n");
 	}
 	
 }
@@ -46,4 +67,8 @@ void replace_process(char* path, char* args[], int n){
 		printf("\n an error has occured");
 	}
 
+}
+
+void process_help(){
+     printf("\n\n");
 }

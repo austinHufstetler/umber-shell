@@ -57,6 +57,14 @@ void handle_file_command(char* lines[], int n){
 	            printf("\nWrong number of arguments \n\n");
 	        }
 		}
+		else if(strcmp(lines[1], "write") == 0){
+			if(n >= 3){
+				write_to_file(lines[2], n, lines);
+			}
+	        else{
+	            printf("\nWrong number of arguments \n\n");
+	        }			
+		}
 		else if(strcmp(lines[1], "help") == 0){
 			file_help();
 		}
@@ -184,6 +192,24 @@ void copy_file(char* file_name, char* location){
 	    close(destination);
 	}
 
+
+}
+
+void write_to_file(char* destination, int n, char* lines[]){
+	int file;
+	if((file= open(destination, O_WRONLY)) == -1){
+		printf("Error, there was an error copying your file \n");
+	}
+	else{
+		int i;
+		for(i=3; i<n; i++){
+			//printf("%s ", lines[i]);
+			write(file, lines[i], strlen(lines[i]));
+			write(file, " ", 1);
+		}
+		printf("You have Successfully written to the file \n");
+		close(file);
+	}
 
 }
 

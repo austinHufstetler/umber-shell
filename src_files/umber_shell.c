@@ -110,6 +110,7 @@ void handle_command(char* command[], int size){
 			help();
 		}
 		else{
+			printf("%d", size);
 			printf("\nCategory does not exist, type help to see a list of categories\n\n");
 		}
 	}
@@ -146,8 +147,8 @@ printf(" 	 #####  #    # #####  ###### #    # \n\n");
 
 int main(int argc, char *argv[], char ** envp){
 
-	char line[50]; // buffer for the user input
-	char* tokens[5];
+	char line[100]; // buffer for the user input
+	char* tokens[50];
 		
 	no_reprint_prmpt = 0; 	// to prevent the printing of the shell
 							// after certain methods
@@ -171,8 +172,8 @@ int main(int argc, char *argv[], char ** envp){
 			prompt_shell();
 
 		no_reprint_prmpt = 0;
-		memset( line, '\0', 20);
-		fgets(line, 50, stdin);
+		memset( line, '\0', 100);
+		fgets(line, 100, stdin);
 
 
 		// If nothing is written, the loop is executed again

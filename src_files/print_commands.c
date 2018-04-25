@@ -116,5 +116,9 @@ void print_current_directory(){
 }
 
 void print_help(){
+	printf("\nprint this foo fee fii - prints whatever comes after this statement");
+	printf("\nprint file foo.txt x -prints text file on shell with only x number of characters printed");
+	printf("\nprint file foo.txt - prints entire text file");
+	printf("\nprint directory - prints all files and folders in current directory");
      printf("\n\n");
 }

@@ -214,6 +214,13 @@ void write_to_file(char* destination, int n, char* lines[]){
 }
 
 void file_help(){
+     printf("\nfile new foo.fee public - creates a new file named foo.fee in current folder and gives read, write, execute rights to every user") ; 
+     printf("\nfile new foo.fee private - creates a new file named foo.fee in current folder and gives read, write rights to current user only") ; 
+     printf("\nfile new foo.fee none - creates a new file named foo.fee in current folder and gives read, write rights to no one :) (not very useful, but interesting to see how to do it)") ; 
+	 printf("\nfile rename current_name new_name - renames a file") ; 
+     printf("\nfile move file_name directory_name - moves a file from current directory to new directory (example. file move test.txt test/)") ; 
+     printf("\nfile delete file_name - deletes file called file_name that is in current directory") ; 
+     printf("\nfile write file_name foo fee fii - writes whatever comes after file_name to file") ; 
      printf("\n\n");
 }
 

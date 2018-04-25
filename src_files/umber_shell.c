@@ -16,6 +16,8 @@
 #include "directory_commands.h"
 #include "process_commands.h"
 
+
+
 pid_t shell_pgid;
 struct termios shell_tmodes;
 int shell_terminal;
@@ -119,11 +121,15 @@ void handle_command(char* command[], int size){
 }
 
 void help(){
+	printf("\ncategories") ; 
      printf("\nmath      - basic math commands") ; 
      printf("\nprint     - print files or text to screen") ; 
      printf("\nfile      - create new files") ; 
      printf("\ndirectory - create new and change directories") ; 
      printf("\nprocess   - get process id") ; 
+     printf("\nexit   - get process id") ; 
+     printf("\n\ncommands") ; 
+     printf("\nexit   - exits shell") ; 
      printf("\n\n");
 }
 
@@ -131,13 +137,13 @@ void help(){
 void welcome(){
 
 
-printf("\n 	#     #      \n");                       
+printf(ANSI_COLOR_YELLOW "\n 	#     #      \n");                       
 printf("	#     # #    # #####  ###### #####  \n"); 
 printf("	#     # ##  ## #    # #      #    # \n"); 
 printf("	#     # # ## # #####  #####  #    # \n"); 
-printf("	#     # #    # #    # #      #####  \n"); 
+printf(ANSI_COLOR_BLUE"	#     # #    # #    # #      #####  \n"); 
 printf("	#     # #    # #    # #      #   #  \n"); 
-printf(" 	 #####  #    # #####  ###### #    # \n\n"); 
+printf(" 	 #####  #    # #####  ###### #    # \n\n" ANSI_COLOR_RESET); 
 
 
                                                       

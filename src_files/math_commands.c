@@ -148,5 +148,10 @@ int mod(int a, int b){
 }
 
 void math_help(){
+     printf("\nmath subtract a b - evaluates a - b and prints result") ; 
+     printf("\nmath add a b - evaluates a + b and prints result") ; 
+     printf("\nmath multiply a b - evaluates a * b and prints result") ; 
+     printf("\nmath divide a b - evaluates a / b and prints result") ; 
+     printf("\nmath mod a b - evaluates a mod b and prints result") ; 
      printf("\n\n");
 }

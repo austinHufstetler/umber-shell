@@ -70,5 +70,7 @@ void replace_process(char* path, char* args[], int n){
 }
 
 void process_help(){
+	printf("\nprocess get id - prints pid of shell");
+	printf("\nprocess replace path args - replaces shell with new process");
      printf("\n\n");
 }

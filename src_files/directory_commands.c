@@ -97,6 +97,10 @@ void delete_empty_directory(char* directory_name){
 }
 
 void directory_help(){
+     printf("\ndirectory new foo public - creates a new directory named foo in current folder and gives read, write, execute rights to every user") ; 
+     printf("\ndirectory new foo private - creates a new directory named foo in current folder and gives read, write rights to current user only") ; 
+     printf("\ndirectory change path - changes directory to path name") ; 
+	 printf("\ndirectory delete empty directory_name - deletes empty(important) directory called directory_name") ; 
      printf("\n\n");
 }
 

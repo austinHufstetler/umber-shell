@@ -77,6 +77,8 @@ https://github.com/jmreyes/simple-c-shell
 
 * <strong>file delete file_name</strong> - deletes file called file_name that is in current directory
 
+* <strong>file write file_name foo fee fii</strong>         - writes whatever comes after file_name to file
+
 ### Directory
 * <strong>directory new foo public</strong>  - creates a new directory named foo in current folder and gives read, write, execute rights to every user
 
